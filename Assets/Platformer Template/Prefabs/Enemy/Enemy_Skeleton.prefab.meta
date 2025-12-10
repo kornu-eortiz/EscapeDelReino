@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cbf4093c69d9d6b4686f96ac58afc2b3
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 139368
+  packageName: 2D Platformer Game Template
+  packageVersion: 2.57
+  assetPath: Assets/Platformer Template/Prefabs/Enemy/Enemy_Skeleton.prefab
+  uploadId: 488242

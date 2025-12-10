@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 03ab130cfa8c2a549b4afaf6e5f9caed
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 139368
+  packageName: 2D Platformer Game Template
+  packageVersion: 2.57
+  assetPath: Assets/Platformer Template/Animation/Player/Player_Roll.anim
+  uploadId: 488242

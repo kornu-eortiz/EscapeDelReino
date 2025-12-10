@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ab3de3da1ae3cb447a7dec9177bee47e
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 139368
+  packageName: 2D Platformer Game Template
+  packageVersion: 2.57
+  assetPath: Assets/Platformer Template/Image/UI/Pixel/Spritesheet/spritesheetInfo.txt
+  uploadId: 488242

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: fb8820d247fefe348a7edb4bf6b9c59f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 139368
+  packageName: 2D Platformer Game Template
+  packageVersion: 2.57
+  assetPath: Assets/Platformer Template/Animation/Enemy/Skeleton/Enemy_Skeleton_Death.anim
+  uploadId: 488242

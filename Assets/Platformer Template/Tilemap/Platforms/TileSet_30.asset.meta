@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: fe1db93fff0d2e54390726ccac126ef4
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 139368
+  packageName: 2D Platformer Game Template
+  packageVersion: 2.57
+  assetPath: Assets/Platformer Template/Tilemap/Platforms/TileSet_30.asset
+  uploadId: 488242

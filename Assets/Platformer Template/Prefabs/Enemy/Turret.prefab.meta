@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ec5c637a20a900e45a017e327ce3154e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 139368
+  packageName: 2D Platformer Game Template
+  packageVersion: 2.57
+  assetPath: Assets/Platformer Template/Prefabs/Enemy/Turret.prefab
+  uploadId: 488242

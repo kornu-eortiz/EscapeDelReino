@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: f0d2f7eb5f0c28049977ec5caf31150c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 139368
+  packageName: 2D Platformer Game Template
+  packageVersion: 2.57
+  assetPath: Assets/Platformer Template/Scripts/Managers/InputManager.cs
+  uploadId: 488242

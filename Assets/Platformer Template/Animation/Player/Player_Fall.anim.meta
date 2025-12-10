@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3009dd9edba7e0741be6d0fd014c84f1
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 139368
+  packageName: 2D Platformer Game Template
+  packageVersion: 2.57
+  assetPath: Assets/Platformer Template/Animation/Player/Player_Fall.anim
+  uploadId: 488242

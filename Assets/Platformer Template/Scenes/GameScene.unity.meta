@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4d2ede457cba91f408665d5e88e8539e
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 139368
+  packageName: 2D Platformer Game Template
+  packageVersion: 2.57
+  assetPath: Assets/Platformer Template/Scenes/GameScene.unity
+  uploadId: 488242

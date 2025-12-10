@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 929ee2a245997a449bbc16662c7da3f7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 139368
+  packageName: 2D Platformer Game Template
+  packageVersion: 2.57
+  assetPath: Assets/Platformer Template/Scripts/Managers/Input/Input Config.asset
+  uploadId: 488242

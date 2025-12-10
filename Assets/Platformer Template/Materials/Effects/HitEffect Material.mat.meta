@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8f800522676b80f42bcc0945649bdb20
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 139368
+  packageName: 2D Platformer Game Template
+  packageVersion: 2.57
+  assetPath: Assets/Platformer Template/Materials/Effects/HitEffect Material.mat
+  uploadId: 488242

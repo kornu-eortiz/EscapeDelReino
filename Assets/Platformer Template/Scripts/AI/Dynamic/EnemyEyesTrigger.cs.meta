@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: ed64a85541d3e014e9781d3f4874a766
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 139368
+  packageName: 2D Platformer Game Template
+  packageVersion: 2.57
+  assetPath: Assets/Platformer Template/Scripts/AI/Dynamic/EnemyEyesTrigger.cs
+  uploadId: 488242

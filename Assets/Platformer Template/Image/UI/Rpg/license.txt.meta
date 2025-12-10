@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 95e37da543dc1424aa397a87b7044450
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 139368
+  packageName: 2D Platformer Game Template
+  packageVersion: 2.57
+  assetPath: Assets/Platformer Template/Image/UI/Rpg/license.txt
+  uploadId: 488242

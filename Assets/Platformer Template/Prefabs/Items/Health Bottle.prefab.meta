@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 02d667fb3fade1949be0d341b73f38fd
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 139368
+  packageName: 2D Platformer Game Template
+  packageVersion: 2.57
+  assetPath: Assets/Platformer Template/Prefabs/Items/Health Bottle.prefab
+  uploadId: 488242

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: ff7fb2df9c7350040a1a03c66b54ed6a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 139368
+  packageName: 2D Platformer Game Template
+  packageVersion: 2.57
+  assetPath: Assets/Platformer Template/Scripts/Animator/AnimatorController.cs
+  uploadId: 488242

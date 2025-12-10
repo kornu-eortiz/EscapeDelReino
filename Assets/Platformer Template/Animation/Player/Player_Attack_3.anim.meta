@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ede4b5f0be1957b4dba2e790b102be32
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 139368
+  packageName: 2D Platformer Game Template
+  packageVersion: 2.57
+  assetPath: Assets/Platformer Template/Animation/Player/Player_Attack_3.anim
+  uploadId: 488242
