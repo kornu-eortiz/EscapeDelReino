@@ -9,6 +9,13 @@ EditorBuildSettings:
     path: Assets/Platformer Template/Scenes/MainMenu.unity
     guid: dc5edfcb4cb380649bf55f2b7d2c8075
   - enabled: 1
-    path: Assets/Platformer Template/Scenes/GameScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Platformer Template/Scenes/Level1.unity
+    guid: 4d2ede457cba91f408665d5e88e8539e
+  - enabled: 1
+    path: Assets/Platformer Template/Scenes/Level2.unity
+    guid: f2ce56a819299be4095f33c7fd8719d4
+  - enabled: 1
+    path: Assets/Platformer Template/Scenes/Level3.unity
+    guid: f9f6738c22ffc454b999a342031ec01c
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

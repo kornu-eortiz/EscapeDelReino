@@ -40,7 +40,11 @@ namespace Platformer
             mobileUI.SetActive(true); //if mobile platform, mobile UI'll turn on
 #endif
 
-            UpdateHP(GameManager.Instance.playerStats.statsData.HP); //clear UI
+            // Verificar que GameManager existe antes de actualizar HP
+            if (GameManager.Instance != null && GameManager.Instance.playerStats != null)
+            {
+                UpdateHP(GameManager.Instance.playerStats.statsData.HP); //clear UI
+            }
         }
 
         //Player hp update method
@@ -51,17 +55,25 @@ namespace Platformer
         //Method to start new game from menu
         public void NewGame()
         {
+            SoundManager.Instance.PlayConfirm(); // Sonido de confirmar
             Time.timeScale = 1; //return time
-            SceneManager.LoadScene("GameScene"); //Reload scene
+            
+            // Usar LevelManager para reiniciar el nivel actual
+            if (LevelManager.Instance != null)
+                LevelManager.Instance.RestartLevel();
+            else
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Recargar escena actual
         }
 
         //Method calls pause from UI
         public void Pause()
         {
+            SoundManager.Instance.PlayPause(); // Sonido de pausa
             ChangeScreen(ScreenState.Pause);
         }
         public void UnPause()
         {
+            SoundManager.Instance.PlayUnpause(); // Sonido de despausar
             ChangeScreen(ScreenState.Game);
         }
         //Method for change screen
@@ -98,14 +110,15 @@ namespace Platformer
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 if (GameManager.Instance.isPause)
-                    ChangeScreen(ScreenState.Game);
+                    UnPause(); // Ahora usa el método con sonido
                 else
-                    ChangeScreen(ScreenState.Pause);
+                    Pause(); // Ahora usa el método con sonido
             }
         }
 
         public void Quit()
         {
+            SoundManager.Instance.PlayDecline(); // Sonido de salir
             Application.Quit();
         }
     }

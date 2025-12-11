@@ -50,6 +50,12 @@ namespace Platformer
             HitEffect hitEffect = collision.GetComponentInChildren<HitEffect>();
             hitEffect.PlayEffect();
 
+            // Sonido de hit según quien recibe el daño
+            if (collision.gameObject.tag == "Enemy")
+                SoundManager.Instance.PlayEnemyHit();
+            else if (collision.gameObject.tag == "Player")
+                SoundManager.Instance.PlayPlayerHit();
+
             Destroy(gameObject);
         }
 

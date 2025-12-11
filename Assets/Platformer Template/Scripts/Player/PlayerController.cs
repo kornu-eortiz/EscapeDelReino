@@ -22,11 +22,24 @@ namespace Platformer
         Transform playerSprite;
         [HideInInspector] public Rigidbody2D rigid2D { get; set; }
 
-        [SerializeField] bool isGrounded;
+        [SerializeField] bool _isGrounded;
+        public bool isGrounded { get { return _isGrounded; } }
         [HideInInspector] public bool isAttacking { get; set; }
 
         [HideInInspector] public bool onLadder;
         bool isClimping;
+
+        // Sistema de sonido de pasos
+        [Header("Steps Sound")]
+        public float stepInterval = 0.25f; // Intervalo entre pasos (ajustable en Inspector)
+        private float stepTimer = 0f;
+
+        // Sistema de sonido de escalera
+        public float climbSoundInterval = 0.5f;
+        private float climbSoundTimer = 0f;
+
+        // Para detectar aterrizaje
+        private bool wasGrounded = true;
 
         private void Start()
         {
@@ -44,6 +57,9 @@ namespace Platformer
 
         public void FixedUpdate()
         {
+            // Si no hay GameManager (ej: MainMenu), no hacer nada
+            if (GameManager.Instance == null) return;
+
             if (GameManager.Instance.isGame && !GameManager.Instance.isPause) //check Game status
             {
                 Move();
@@ -54,6 +70,9 @@ namespace Platformer
 
         private void Update()
         {
+            // Si no hay GameManager (ej: MainMenu), no hacer nada
+            if (GameManager.Instance == null) return;
+
             if (GameManager.Instance.isGame && !GameManager.Instance.isPause)
             {
                 Rotation();
@@ -68,7 +87,24 @@ namespace Platformer
         public void Move()
         {
             if (!isAttacking)
+            {
                 transform.Translate(new Vector2(inputManager.Horizontal * moveSpeed * Time.deltaTime, 0));
+
+                // Sonido de pasos mientras camina en el suelo
+                if (inputManager.Horizontal != 0 && _isGrounded)
+                {
+                    stepTimer -= Time.deltaTime;
+                    if (stepTimer <= 0f)
+                    {
+                        SoundManager.Instance.PlaySteps();
+                        stepTimer = stepInterval;
+                    }
+                }
+                else
+                {
+                    stepTimer = 0f; // Reiniciar timer cuando deja de caminar
+                }
+            }
         }
 
         //Rotation method
@@ -104,22 +140,26 @@ namespace Platformer
             {
                 animatorController.SetTrigger("Jump");
                 rigid2D.linearVelocity = Vector2.up * jumpForce;
+                SoundManager.Instance.PlayJump(); // Sonido de salto
             }
 
         }
         //Attack method
         public void Attack()
         {
+            // Solo atacar en el suelo
             if (isGrounded && (inputManager.MeleeAttack || inputManager.RangeAttack) && !isAttacking && !isClimping) 
             {
                 isAttacking = true; //attack status
                 if (inputManager.MeleeAttack)
                 {
                     animatorController.SetBool("MeleeAttack", isAttacking); //Set animator bool
+                    SoundManager.Instance.PlaySwordAttack(); // Sonido de espada
                 }
                 else if (inputManager.RangeAttack)
                 {
                     animatorController.SetBool("RangeAttack", isAttacking);
+                    SoundManager.Instance.PlayCrossbow(); // Sonido de ballesta
                 }
             }
         }
@@ -148,16 +188,26 @@ namespace Platformer
                 {
                     isClimping = true; 
                     rigid2D.linearVelocity = Vector2.up * inputManager.Vertical * moveSpeed; //move up or down
+
+                    // Sonido de escalera
+                    climbSoundTimer -= Time.deltaTime;
+                    if (climbSoundTimer <= 0f)
+                    {
+                        SoundManager.Instance.PlayClimb();
+                        climbSoundTimer = climbSoundInterval;
+                    }
                 }
                 else
                 {
-                    rigid2D.linearVelocity = Vector2.zero; 
+                    rigid2D.linearVelocity = Vector2.zero;
+                    climbSoundTimer = 0f;
                 }
 
             }
             else //if leave ladder
             {
                 isClimping = false;
+                climbSoundTimer = 0f;
             }
 
             if (onLadder)
@@ -169,6 +219,7 @@ namespace Platformer
         //Death event
         public void Death()
         {
+            SoundManager.Instance.PlayPlayerLose(); // Sonido de muerte
             animatorController.SetTrigger("Death");
             GameManager.Instance.GameOver(); //set game state to game over
         }
@@ -182,13 +233,20 @@ namespace Platformer
             {
                 if (Vector2.Distance(transform.position, raycastHit2D.point) <= raycastHit2D.distance) //if raycast 
                 {
-                    isGrounded = true; //is ground 
+                    // Detectar aterrizaje (estaba en aire, ahora en suelo)
+                    if (!wasGrounded && !_isGrounded == false)
+                    {
+                        SoundManager.Instance.PlayLanding();
+                    }
+                    wasGrounded = _isGrounded;
+                    _isGrounded = true; //is ground 
                     Debug.DrawLine(transform.position, raycastHit2D.point); //draw line only in editor
                 }
             }
             else
             {
-                isGrounded = false; 
+                wasGrounded = _isGrounded;
+                _isGrounded = false; 
             }
 
         }

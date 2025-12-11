@@ -42,6 +42,7 @@ namespace Platformer
 
                 MeleeAttack(enemyStats, damage);
 
+                SoundManager.Instance.PlayEnemyHit(); // Sonido de enemigo recibiendo daño
                 CameraManager.Instance.cameraShake.Shake(); //Damage
             }
         }
@@ -65,6 +66,12 @@ namespace Platformer
             animatorController.ResetTrigger("AttackCombo");
             animatorController.SetBool("MeleeAttack", false);
 
+            // Si está en el aire, reanudar animación de salto/caída
+            if (!playerController.isGrounded)
+            {
+                animatorController.SetTrigger("Jump");
+            }
+
             canCombo = false; //block combo
             playerController.isAttacking = false;
         }
@@ -72,6 +79,13 @@ namespace Platformer
         public void OnRangeAttackEnd()
         {
             animatorController.SetBool("RangeAttack", false);
+
+            // Si está en el aire, reanudar animación de salto/caída
+            if (!playerController.isGrounded)
+            {
+                animatorController.SetTrigger("Jump");
+            }
+
             playerController.isAttacking = false;
         }
 
@@ -88,6 +102,7 @@ namespace Platformer
                 {
                     canCombo = false;
                     animatorController.SetTrigger("AttackCombo");
+                    SoundManager.Instance.PlaySwordAttack(); // Sonido del combo
                     StopCoroutine(ICombo(0));
                 }
                 yield return null;

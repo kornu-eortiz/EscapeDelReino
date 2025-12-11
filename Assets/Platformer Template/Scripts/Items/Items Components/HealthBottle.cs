@@ -19,6 +19,8 @@ namespace Platformer
         void OnPickedEvent()
         {
             /////////////////////////////////////////////////Here your logic
+            if (GameManager.Instance == null || GameManager.Instance.playerStats == null) return;
+            
             if (GameManager.Instance.playerStats.statsData.HP < 100)
             {
                 GameManager.Instance.playerStats.statsData.HP += HealthNumber;
@@ -26,7 +28,11 @@ namespace Platformer
                 if (GameManager.Instance.playerStats.statsData.HP > 100)
                     GameManager.Instance.playerStats.statsData.HP = 100;
 
-                UIManager.Instance.UpdateHP(GameManager.Instance.playerStats.statsData.HP);
+                if (UIManager.Instance != null)
+                    UIManager.Instance.UpdateHP(GameManager.Instance.playerStats.statsData.HP);
+
+                if (SoundManager.Instance != null)
+                    SoundManager.Instance.PlayHeal(); // Sonido de curacion
 
                 Destroy(gameObject);
             }

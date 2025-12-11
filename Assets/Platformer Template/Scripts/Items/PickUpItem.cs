@@ -16,7 +16,8 @@ namespace Platformer
             if(collision.gameObject.tag == "Player")
             {
                 //if player enter in trigger event calls
-                OnPickedUP();
+                if (OnPickedUP != null)
+                    OnPickedUP();
             }
         }
 

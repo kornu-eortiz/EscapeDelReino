@@ -19,7 +19,10 @@ namespace Platformer
             statsData.HP -= damage; //Subtract damage from hp
 
             if (gameObject.tag == "Player") //if player
+            {
                 UIManager.Instance.UpdateHP(statsData.HP); //Update UI
+                SoundManager.Instance.PlayPlayerHit(); // Sonido de jugador golpeado
+            }
 
             if (statsData.HP <= 0) 
             {
